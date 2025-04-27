@@ -1,73 +1,163 @@
-*{
+/*Basic styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-   }
-   body {
-    background:blue;
-    text-align: center;
-    padding: 20px;
-   }
-   
-   header {
-    color: hashtag#f8eeee;
-    padding: 25px;
-    border-radius: 15px;
-   }
-   
-   h1 {
-    font-size: 5rem;
-    font-weight: 1000;
-   }
-   
-   p {
-    font-size: 1rem;
-    font-weight: 300;
-   }
-   
-   section {
-    margin: 10px auto;
-    max-width: 600px;
-    background: rgb(194, 182, 182);
+}
+
+header {
+    background: linear-gradient(85deg, white, rgb(4, 84, 76));
+    border-bottom: 2px solid rgb(88, 88, 91);
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 180px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: rgb(72, 31, 31);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+section {
+  background-color: rgb(173, 164, 42);
+  padding: 20px;
+  text-align: center;
+  margin: 10;
+}
+
+/* Form styling */
+form {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  background-color: rgb(211, 16, 16);
+  border-radius: 10px;
+  padding: 20px;
+}
+form input, form textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #4c4040;
+}
+
+form button {
+    background: #025142;
+    color: rgb(17, 14, 14);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
+/* To-Do styling */
+.todoContainer {
+    background: rgb(131, 28, 28);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-   }
-   
-   img {
-    width: 100px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    height:100px;
-   }
+    margin: 0 auto;
+    width: 90%;
+    max-width: 600px;
+}
 
-   button {
-    background: hashtag#2a2b2c;
-    color: white;
-    padding: 12px 20px;
+.todoContainer input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #272456;
+}
+
+.todoContainer button {
+    margin-left: 10px;
+    background: #025142;
+    color: rgb(125, 39, 39);
+    padding: 10px;
     border: none;
-    border-radius: 8px;
-    font-size: 0.8 rem;
+    border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
-    margin-top: 4px;
-   }
-   
-   button:hover {
-    background: hashtag#0056b3;
-   }
-   
-   footer {
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
     margin-top: 20px;
-    font-size: 1rem;
-   }
-   
-   footer a {
-    color: hashtag#b18240;
+}
+
+#taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+#taskList li button {
+    background: red;
+    color: rgb(56, 90, 34);
+    border: none;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+/* RESPONSIVENESS */
+@media (min-width: 1000px) {
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        padding: 40px;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    form, .todoContainer {
+        width: 95%;
+    }
+
+    .todoContainer input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .todoContainer button {
+        width: 20%;
+        margin-left: 0;
+    }
+}
+
+footer {
+    background: #025142;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+footer a {
+    color: rgb(17, 176, 176);
     text-decoration: none;
-   }
-   
-   footer p {
-    color: rgb(231, 223, 223);
-   }
+  }
